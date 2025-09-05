@@ -39,7 +39,7 @@ export async function fetchGitHubContent() {
   }
 
   try {
-    const response = await fetch(`${GITHUB_API_BASE}/repos/${process.env.GITHUB_OWNER}/${process.env.GITHUB_REPO}/contents/content/hello.md`, {
+    const response = await fetch(`${GITHUB_API_BASE}/repos/${process.env.GITHUB_OWNER}/${process.env.GITHUB_REPO}/contents/hello.md`, {
       headers: {
         'Authorization': `token ${process.env.GITHUB_TOKEN}`,
         'Accept': 'application/vnd.github.v3+json',
