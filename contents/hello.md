@@ -1,4 +1,4 @@
-# Hello, GitHub 👋
+# Hello, GitHub
 
 Welcome to **GitHub**!  
 This is a basic `hello.md` file to get started.  

@@ -23,7 +23,7 @@ You can use **bold text**, *italic text*, and even \`inline code\`.
 - Item 2
 - Item 3
 
-Happy writing!
+Happy Coding!
 `;
 
 export default dummyContent;
