@@ -1,49 +1,22 @@
-// GitHub API integration functions
+import dummyContent from './dummyContent';
 
 const GITHUB_API_BASE = 'https://api.github.com';
 
-// Mock content for demonstration
-const mockContent = `# Hello World
-
-Welcome to our content management system! This is a sample markdown file fetched from GitHub.
-
-## Features
-
-- Fetch content from GitHub repositories
-- Create and manage drafts
-- Publish content back to GitHub
-- Clean, responsive interface
-
-## Getting Started
-
-Use the form below to create new drafts and publish them to your repository.
-
-## Markdown Support
-
-You can use **bold text**, *italic text*, and even \`inline code\`.
-
-### Lists work too:
-
-- Item 1
-- Item 2
-- Item 3
-
-Happy writing! 🚀
-`;
 
 export async function fetchGitHubContent() {
-  // In development mode or without proper config, return mock content
-  if (!process.env.GITHUB_TOKEN || !process.env.GITHUB_OWNER || !process.env.GITHUB_REPO) {
-    console.log('Using mock content - configure environment variables for GitHub integration');
-    return mockContent;
+  // Without proper config, show dummy content
+  if (!process.env.NEXT_PUBLIC_GITHUB_TOKEN || !process.env.NEXT_PUBLIC_GITHUB_OWNER || !process.env.NEXT_PUBLIC_GITHUB_REPO) {
+    // console.log("TOKEN :::", process.env.NEXT_PUBLIC_GITHUB_TOKEN);
+    console.log('showing dummy content :::');
+    return dummyContent;
   }
 
   try {
-    const response = await fetch(`${GITHUB_API_BASE}/repos/${process.env.GITHUB_OWNER}/${process.env.GITHUB_REPO}/contents/hello.md`, {
-      headers: {
-        'Authorization': `token ${process.env.GITHUB_TOKEN}`,
+    const response = await fetch(`${GITHUB_API_BASE}/repos/${process.env.NEXT_PUBLIC_GITHUB_OWNER}/${process.env.NEXT_PUBLIC_GITHUB_REPO}/contents/contents/hello.md`, {
+    headers: {
+        'Authorization': `token ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
         'Accept': 'application/vnd.github.v3+json',
-      },
+    },
     });
 
     if (!response.ok) {
@@ -55,16 +28,16 @@ export async function fetchGitHubContent() {
     return content;
   } catch (error) {
     console.error('Error fetching GitHub content:', error);
-    return mockContent; // Fallback to mock content
+    return dummyContent; // Fallback to dmmy content
   }
 }
 
 export async function publishToGitHub(drafts) {
-  // In development mode, simulate publishing
-  if (!process.env.GITHUB_TOKEN || !process.env.GITHUB_OWNER || !process.env.GITHUB_REPO) {
+  
+  if (!process.env.NEXT_PUBLIC_GITHUB_TOKEN || !process.env.NEXT_PUBLIC_GITHUB_OWNER || !process.env.NEXT_PUBLIC_GITHUB_REPO) {
     console.log('Simulating publish to GitHub...');
     await new Promise(resolve => setTimeout(resolve, 2000));
-    return { success: true, message: 'Published successfully (mock)' };
+    return { success: true, message: 'Published successfully (dummy)' };
   }
 
   try {
@@ -73,10 +46,10 @@ export async function publishToGitHub(drafts) {
       const content = `# ${draft.title}\n\n${draft.body}`;
       const encodedContent = btoa(unescape(encodeURIComponent(content)));
 
-      const response = await fetch(`${GITHUB_API_BASE}/repos/${process.env.GITHUB_OWNER}/${process.env.GITHUB_REPO}/contents/content/${filename}`, {
+      const response = await fetch(`${GITHUB_API_BASE}/repos/${process.env.NEXT_PUBLIC_GITHUB_OWNER}/${process.env.NEXT_PUBLIC_GITHUB_REPO}/contents/contents/${filename}`, {
         method: 'PUT',
         headers: {
-          'Authorization': `token ${process.env.GITHUB_TOKEN}`,
+          'Authorization': `token ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
           'Accept': 'application/vnd.github.v3+json',
           'Content-Type': 'application/json',
         },
