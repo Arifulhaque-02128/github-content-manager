@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GitHub Content Manager
 
-## Getting Started
+A modern web app for fetching and publishing content to GitHub repositories. Create drafts locally and publish them to your GitHub repo with a clean, responsive interface.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- View GitHub markdown content
+- Create and edit drafts locally
+- Publish drafts to GitHub
+- Responsive design with Tailwind CSS
+
+## Demo
+
+![A quick demo of the application](./demo.gif)
+
+## Tech Stack
+
+Next.js 15, React 19, Tailwind CSS, GitHub API
+
+## Quick Start
+
+1. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+2. **Environment setup** (optional - works with dummy content without these)
+   
+   Create `.env.local`:
+   ```env
+   NEXT_PUBLIC_GITHUB_TOKEN=your_github_personal_access_token
+   NEXT_PUBLIC_GITHUB_OWNER=your_github_username
+   NEXT_PUBLIC_GITHUB_REPO=your_repository_name
+   ```
+
+3. **Run locally**
+   ```bash
+   npm run dev
+   ```
+   
+   Open [http://localhost:3000](http://localhost:3000)
+
+## Configuration
+
+### GitHub Token Setup
+
+1. Go to GitHub Settings → Developer settings → Personal access tokens
+2. Generate Personal Access token with `repo` permissions
+3. Add to `.env.local`
+
+### Repository Structure
+
+Content is stored in `contents/` directory:
+```
+your-repo/
+└── contents/
+    ├── hello.md
+    └── your-posts.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `npm run dev` - Development server
+- `npm run build` - Production build
+- `npm start` - Production server
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Links
 
-## Learn More
+- 🌐 **Live Site**: [Add your deployed URL here]
+- 📁 **Content Repository**: [Add your GitHub content repository URL here]
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---

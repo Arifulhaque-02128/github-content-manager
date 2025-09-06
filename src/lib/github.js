@@ -77,7 +77,7 @@ export async function publishToGitHub(drafts) {
         console.log(`Error checking file existence: ${checkError.message}`);
       }
 
-      // Prepare request body
+      // Prepare request body to Update or Publish
       const requestBody = {
         message: `${fileExists ? 'Update' : 'Add'} post: ${draft.title}`,
         content: encodedContent,
@@ -89,7 +89,7 @@ export async function publishToGitHub(drafts) {
         requestBody.sha = sha;
       }
 
-      // Publish/update the file
+      // Publish or update the file
       const response = await fetch(`${GITHUB_API_BASE}/repos/${process.env.NEXT_PUBLIC_GITHUB_OWNER}/${process.env.NEXT_PUBLIC_GITHUB_REPO}/contents/contents/${filename}`, {
         method: 'PUT',
         headers: {

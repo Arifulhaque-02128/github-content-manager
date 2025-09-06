@@ -40,7 +40,7 @@ const GitHubContentManager = () => {
     }
   }, []);
 
-  // Save drafts when they change
+  // Save drafts in local storage when they are modified
   useEffect(() => {
     localStorage.setItem('github-drafts', JSON.stringify(drafts));
   }, [drafts]);
@@ -80,7 +80,7 @@ const GitHubContentManager = () => {
       if (!window.confirm(`Are you sure you want to publish ${drafts.length} drafts to GitHub?`)) {
         return;
       }
-  
+      
       setLoading(true);
       try {
         await publishToGitHub(drafts);
