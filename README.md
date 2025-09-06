@@ -1,6 +1,6 @@
 # GitHub Content Manager
 
-A modern web app for fetching and publishing content to GitHub repositories. Create drafts locally and publish them to your GitHub repo with a clean, responsive interface.
+A web app for fetching and publishing content to GitHub repositories. Create drafts locally and publish them to your GitHub repo with a clean, responsive interface.
 
 ## Features
 
