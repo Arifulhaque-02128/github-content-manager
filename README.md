@@ -66,7 +66,7 @@ your-repo/
 
 ## Links
 
-- 🌐 **Live Site**: [Live site]
-- 📁 **Content Repository**: [https://github.com/Arifulhaque-02128/github-content-manager] (https://github.com/Arifulhaque-02128/github-content-manager)
+- **Live Site**: https://github-content-manager.vercel.app/
+- **Content Repository**: https://github.com/Arifulhaque-02128/github-content-manager
 
 ---
