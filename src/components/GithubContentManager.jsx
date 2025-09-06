@@ -46,8 +46,11 @@ const GitHubContentManager = () => {
   }, [drafts]);
 
   const addDraft = (draft) => setDrafts([...drafts, draft]);
-  const updateDraft = (id, updated) =>
+
+  const updateDraft = (id, updated) => {
     setDrafts(drafts.map(d => (d.id === id ? { ...d, ...updated } : d)));
+  }
+
   const deleteDraft = (id) => setDrafts(drafts.filter(d => d.id !== id));
 
   useEffect(() => {
@@ -127,7 +130,7 @@ const GitHubContentManager = () => {
               setFormData={setFormData}
               isEditing={isEditing}
               onSubmit={handleSubmit}
-              onCancel={() => { setIsEditing(false); setEditingId(null); }}
+              onCancel={() => { setIsEditing(false); setEditingId(null); setActiveTab('drafts'); setFormData({ title: '', body: '' }); }}
             />
           )}
 

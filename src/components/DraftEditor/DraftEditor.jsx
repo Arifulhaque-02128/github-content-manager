@@ -1,14 +1,17 @@
 const DraftEditor = ({ formData, setFormData, isEditing, onSubmit, onCancel }) => (
   <div className="bg-white rounded-xl shadow-sm border p-6 text-gray-900">
     <div className="flex items-center justify-between mb-6">
+
       <h2 className="text-xl font-semibold">
         {isEditing ? 'Edit Draft' : 'Create New Draft'}
       </h2>
+
       {isEditing && (
-        <button onClick={onCancel} className="text-sm text-gray-500 hover:text-gray-700">
+        <button onClick={onCancel} className="text-sm text-green-900 cursor-pointer bg-green-100 hover:bg-green-200 p-2 rounded-lg">
           Cancel Edit
         </button>
       )}
+
     </div>
 
     <div className="space-y-4">
