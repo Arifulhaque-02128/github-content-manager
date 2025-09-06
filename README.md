@@ -17,6 +17,12 @@ A web app for fetching and publishing content to GitHub repositories. Create dra
 
 Next.js 15, React 19, Tailwind CSS, GitHub API
 
+## Key Dependencies
+
+- `marked` - Markdown parser for converting drafts to HTML
+- `dompurify` - Sanitizes HTML output to prevent XSS attacks
+- `lucide-react` - Beautiful, lightweight SVG icons
+
 ## Quick Start
 
 1. **Install dependencies**

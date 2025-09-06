@@ -1,4 +1,6 @@
-# Introduction to Large Language Models (LLMs)
+# Introduction to Large Language Models
+
+Large Language Models (LLMs) are AI models trained on massive amounts of text data to understand, generate, and manipulate human language.
 
 ## Key Concepts
 
