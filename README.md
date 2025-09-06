@@ -11,7 +11,7 @@ A modern web app for fetching and publishing content to GitHub repositories. Cre
 
 ## Demo
 
-![A quick demo of the application](./demo.gif)
+![A quick demo of the application](./github-content-manager.gif)
 
 ## Tech Stack
 
@@ -66,7 +66,7 @@ your-repo/
 
 ## Links
 
-- 🌐 **Live Site**: [Add your deployed URL here]
-- 📁 **Content Repository**: [Add your GitHub content repository URL here]
+- 🌐 **Live Site**: [Live site]
+- 📁 **Content Repository**: [https://github.com/Arifulhaque-02128/github-content-manager] (https://github.com/Arifulhaque-02128/github-content-manager)
 
 ---
