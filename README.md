@@ -11,7 +11,7 @@ A web app for fetching and publishing content to GitHub repositories. Create dra
 
 ## Demo
 
-![A quick demo of the application](./demo.gif)
+![A quick demo of the application](./demo-gif.gif)
 
 ## Tech Stack
 
