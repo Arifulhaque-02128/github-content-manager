@@ -1,3 +1,0 @@
-# aDASQAD
-
-adsa qwedwd wd
